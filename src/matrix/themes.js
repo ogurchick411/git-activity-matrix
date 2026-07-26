@@ -15,3 +15,8 @@ export function getBlockByTheme(count, themeName = 'github') {
   if (count <= 9) return chalk.hex(palette[3])('■');
   return chalk.hex(palette[4])('■');
 }
+
+export function getEmptyBlock(themeName = 'github') {
+  const palette = themes[themeName] || themes.github;
+  return chalk.hex(palette[0])('■');
+}
