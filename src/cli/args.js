@@ -2,12 +2,15 @@ export function parseArgs(rawArgs) {
   const args = {
     path: process.cwd(),
     year: new Date().getFullYear(),
-    theme: 'github'
+    theme: 'github',
+    help: false
   };
 
   for (let i = 0; i < rawArgs.length; i++) {
     const arg = rawArgs[i];
-    if (arg === '--path' && rawArgs[i + 1]) {
+    if (arg === '--help') {
+      args.help = true;
+    } else if (arg === '--path' && rawArgs[i + 1]) {
       args.path = rawArgs[i + 1];
       i++;
     } else if (arg === '--year' && rawArgs[i + 1]) {
