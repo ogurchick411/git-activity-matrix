@@ -2,6 +2,7 @@ export function parseArgs(rawArgs) {
   const args = {
     path: process.cwd(),
     year: new Date().getFullYear(),
+    theme: 'github'
   };
 
   for (let i = 0; i < rawArgs.length; i++) {
@@ -11,6 +12,9 @@ export function parseArgs(rawArgs) {
       i++;
     } else if (arg === '--year' && rawArgs[i + 1]) {
       args.year = parseInt(rawArgs[i + 1], 10);
+      i++;
+    } else if (arg === '--theme' && rawArgs[i + 1]) {
+      args.theme = rawArgs[i + 1].toLowerCase();
       i++;
     }
   }
