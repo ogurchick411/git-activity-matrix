@@ -5,7 +5,9 @@ import { getCommitDates } from './git/commands.js';
 import { aggregateCommitsByDate } from './utils/date.js';
 import { buildYearMatrix } from './matrix/builder.js';
 import { renderMatrix } from './matrix/renderer.js';
+import { renderLegend } from './matrix/legend.js';
 import { calculateStats } from './analytics/stats.js';
+import { calculatePeakHour } from './analytics/hours.js';
 import { renderStats } from './analytics/display.js';
 
 function checkGitAvailability() {
@@ -40,7 +42,9 @@ export function run() {
   const commitMap = aggregateCommitsByDate(allDates);
   const matrix = buildYearMatrix(args.year, commitMap);
   const stats = calculateStats(commitMap);
+  const peakData = calculatePeakHour(allDates);
 
-  renderMatrix(matrix);
-  renderStats(stats);
+  renderMatrix(matrix, args.theme);
+  renderLegend();
+  renderStats(stats, peakData);
 }
