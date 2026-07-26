@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import { parseArgs } from './cli/args.js';
+import { showHelp } from './cli/help.js';
 import { findGitRepositories } from './git/scanner.js';
 import { getCommitDates } from './git/commands.js';
 import { aggregateCommitsByDate } from './utils/date.js';
@@ -26,6 +27,12 @@ export function run() {
   }
 
   const args = parseArgs(process.argv.slice(2));
+
+  if (args.help) {
+    showHelp();
+    return;
+  }
+
   const repos = findGitRepositories(args.path);
 
   if (repos.length === 0) {
