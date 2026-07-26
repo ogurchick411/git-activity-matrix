@@ -1,7 +1,7 @@
 import chalk from 'chalk';
-import { getColoredBlock } from './colors.js';
+import { getBlockByTheme } from './themes.js';
 
-export function renderMatrix(matrix) {
+export function renderMatrix(matrix, themeName = 'github') {
   const dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const output = [];
 
@@ -11,7 +11,7 @@ export function renderMatrix(matrix) {
       if (!cell) {
         return ' ';
       }
-      return getColoredBlock(cell.count);
+      return getBlockByTheme(cell.count, themeName);
     });
 
     output.push(`${label}${cells.join(' ')}`);
