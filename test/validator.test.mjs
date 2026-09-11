@@ -1,4 +1,4 @@
-import { validateInput } from '../src/validator.js';
+const { validateInput } = require('../src/validator.mjs');
 
 function runTests() {
   console.log("Running tests...");
