@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "node test/validator.test.js"
+    "test": "node test/validator.test.mjs"
   },
   "keywords": [
     "git",

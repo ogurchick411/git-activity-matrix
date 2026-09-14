@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 
+
 export function renderLegend() {
   const c0 = chalk.hex('#2d333b')('■');
   const c1 = chalk.hex('#0e4429')('■');
