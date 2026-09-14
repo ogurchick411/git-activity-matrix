@@ -11,7 +11,7 @@
 ## Overview
 
 <p align="center">
-  <img src="./assets/demo.png" alt="Git Activity Matrix Demo" width="100%" />
+  <img width="799" height="410" alt="Снимок экрана — 2026-09-11 в 13 13 53" src="https://github.com/user-attachments/assets/8a8596d5-fa1e-457a-8e66-2dcdff490f77" />
 </p>
 
 ---

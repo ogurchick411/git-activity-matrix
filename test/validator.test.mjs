@@ -10,6 +10,7 @@ function runTests() {
     console.error("✕ Test 1 Failed: valid object rejected");
   }
 
+  
   try {
     validateInput(null);
     console.error("✕ Test 2 Failed: null should throw an error");
